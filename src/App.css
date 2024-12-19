@@ -1,38 +1,114 @@
+/* src/App.css */
+
+:root {
+  --primary-color: #00a1b2;
+  --secondary-color: #ffffff;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar styles */
+nav {
+  background-color: var(--primary-color);
+  padding: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul li {
+  margin: 0 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
 }
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery styles */
+.gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+/* Property details styles */
+.property-details {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.property-details h1 {
+  color: var(--primary-color);
+}
+
+.property-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.property-details ul li {
+  margin: 5px 0;
+}
+
+/* Amenities styles */
+.amenities {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.amenities h2 {
+  color: var(--primary-color);
+}
+
+.amenities ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin-top: 20px;
+}
+

@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import Gallery from './components/Gallery';
+import PropertyDetails from './components/PropertyDetails';
+import Amenities from './components/Amenities';
+import Footer from './components/Footer';
+import propertyData from './data/propertyData';
+import Header from './components/Header';
+import Section1 from './components/Section1';
+import Map from './components/Map';
+import Iframe3d from './components/Iframe3d';
+import Carousel from './components/Carousel';
 
-function App() {
+const App = () => {
+  console.log("Property details:", propertyData.details);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header headerLogo={propertyData.headerLogo} />
+      <Section1 
+        title={propertyData.title}
+        address={propertyData.address}
+      />
+  
+      <Gallery 
+        section2Image={propertyData.section2Image} 
+        title={propertyData.title} 
+        address={propertyData.address} 
+        description={propertyData.description} 
+        details={propertyData.details}
+      />
+      <Carousel images={propertyData.images} />
+      <PropertyDetails 
+        title={propertyData.title} 
+        subheading={propertyData.subheading} 
+        longDescription={propertyData.longDescription} 
+        longImage={propertyData.longImage} 
+      />
+
+      {propertyData.iframe3d && (
+        <Iframe3d src={propertyData.iframe3d} title={propertyData.title} />
+      )}
+
+      <Map
+        title="Where You'll Be"
+        contactLink="https://christinacavallo.realtor/" // Replace with your desired URL
+      />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
