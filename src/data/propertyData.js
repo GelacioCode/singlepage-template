@@ -3,7 +3,7 @@ import logo from '../assets/irg_logo.jpg';
 // import section1Image from '../assets/13 Family Room.jpg';
 // import section2Image from '../assets/1 Living.jpg';
 import section1Image from '../assets/Candlewood Shores.webp';
-import section2Image from '../assets/House.webp';
+import section2Image from '../assets/outside/1.jpg';
 
 import galleryImage1 from '../assets/2 Living.jpg';
 import galleryImage2 from '../assets/3 Living.jpg';
@@ -23,6 +23,13 @@ import galleryImage12 from '../assets/Office 1.jpg';
 
 
 import propertyImage from '../assets/16 Family Room.jpg';
+
+import house1 from '../assets/outside/5.jpg';
+import house2 from '../assets/House2.jpg';
+import house3 from '../assets/House3.jpg';
+import house4 from '../assets/House4.jpg';
+import house5 from '../assets/House5.jpg';
+import house6 from '../assets/House6.jpg';
 
 
 const propertyData = {
@@ -66,6 +73,14 @@ const propertyData = {
       dock: "Yes"
       
     },
+    floorplanimages: [
+      house1,
+      house2,
+      house3,
+      house4,
+      house5,
+      house6
+    ],
     iframe3d: "https://my.matterport.com/show/?m=GnhhusnJJPs&play=1&qs=1",
 };
 

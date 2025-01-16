@@ -10,6 +10,7 @@ import Section1 from './components/Section1';
 import Map from './components/Map';
 import Iframe3d from './components/Iframe3d';
 import Carousel from './components/Carousel';
+import CommunitySection from './components/Community';
 
 const App = () => {
   console.log("Property details:", propertyData.details);
@@ -21,25 +22,26 @@ const App = () => {
         title={propertyData.title}
         address={propertyData.address}
       />
-  
-      <Gallery 
-        section2Image={propertyData.section2Image} 
+
+      <Amenities section2Image={propertyData.section2Image} 
         title={propertyData.title} 
         address={propertyData.address} 
         description={propertyData.description} 
-        details={propertyData.details}
-      />
+        details={propertyData.details} />
+  
       <Carousel images={propertyData.images} />
       <PropertyDetails 
         title={propertyData.title} 
         subheading={propertyData.subheading} 
         longDescription={propertyData.longDescription} 
-        longImage={propertyData.longImage} 
+        images={propertyData.floorplanimages} 
       />
 
       {propertyData.iframe3d && (
         <Iframe3d src={propertyData.iframe3d} title={propertyData.title} />
       )}
+
+      <CommunitySection />
 
       <Map
         title="Where You'll Be"

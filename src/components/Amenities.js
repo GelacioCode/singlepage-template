@@ -2,19 +2,18 @@ import React, { useState, useEffect, useRef } from "react";
 import areaIcon from "../assets/icons/area.jpg";
 import bathIcon from "../assets/icons/bath.jpg";
 import bedIcon from "../assets/icons/bed.jpg";
-import graniteIcon from "../assets/icons/graniteCounterTops.jpg";
-import poolIcon from "../assets/icons/pool.jpg";
+import brickIcon from "../assets/icons/bricklayer.png";
+import garageIcon from "../assets/icons/garage.png";
 import squareFeetIcon from "../assets/icons/squarefeet.jpg";
-import stainlessIcon from "../assets/icons/stainless.jpg";
+import communityIcon from "../assets/icons/handshake.png";
 import waterFrontIcon from "../assets/icons/waterFront.jpg";
 
-const Amenities = ({ details = {} }) => {
+const Amenities = ({ section2Image, title, address, description, details = {} }) => {
   const [animatedValues, setAnimatedValues] = useState({
     bedrooms: 0,
     baths: 0,
     lot: 0,
     squareFeet: 0,
-
   });
 
   const [isVisible, setIsVisible] = useState(false);
@@ -50,7 +49,7 @@ const Amenities = ({ details = {} }) => {
         setTimeout(() => {
           clearInterval(interval);
           setAnimatedValues((prev) => ({ ...prev, [key]: targetValue }));
-        }, 2000);
+        }, 5000);
       };
 
       if (details.bedrooms) animateNumbers("bedrooms", details.bedrooms);
@@ -62,57 +61,70 @@ const Amenities = ({ details = {} }) => {
 
   return (
     <div className="amenities" ref={sectionRef}>
-
-      <div className="amenities-list">
-        <div className="amenity-item">
-          <img src={bedIcon} alt="Bedrooms" className="amenity-icon" />
-          <h3>{animatedValues.bedrooms || 0}</h3>
-          <span>Bedrooms</span>
-        </div>
-
-        <div className="amenity-item">
-          <img src={bathIcon} alt="Baths" className="amenity-icon" />
-          <h3>{animatedValues.baths || 0}</h3>
-          <span>Baths</span>
-        </div>
-
-        <div className="amenity-item">
-          <img src={areaIcon} alt="Acre" className="amenity-icon" />
-          <h3>{animatedValues.lot || 0}</h3>
-          <span>Lot</span>
-        </div>
-
-        <div className="amenity-item">
-          <img src={squareFeetIcon} alt="Area" className="amenity-icon" />
-          <h3>{animatedValues.squareFeet || 0}</h3>
-          <span>Area (sqft)</span>
-        </div>
-
-        <div className="amenity-item">
-          <img src={waterFrontIcon} alt="Waterfront" className="amenity-icon" />
-          <h3>{details.waterFront || "No"}</h3>
-          <span>Waterfront</span>
-        </div>
-
-        <div className="amenity-item">
-          <img src={poolIcon} alt="Pool Area" className="amenity-icon" />
-          <h3>{details.poolArea || "No"}</h3>
-          <span>Pool Area</span>
-        </div>
-
-        <div className="amenity-item">
-          <img src={graniteIcon} alt="Granite Countertops" className="amenity-icon" />
-          <h3>{details.graniteCounterTops || "No"}</h3>
-          <span>Granite Countertops</span>
-        </div>
-
-        <div className="amenity-item">
-          <img src={stainlessIcon} alt="Stainless" className="amenity-icon" />
-          <h3>{details.stainless || "No"}</h3>
-          <span>Stainless</span>
-        </div>
+  <div className="amenities-container">
+    {/* Left Column */}
+    <div className="amenities-column">
+      <div className="amenity-item">
+        <img src={bedIcon} alt="Bedrooms" className="amenity-icon" />
+        <h3>{animatedValues.bedrooms || 0}</h3>
+        <span>Bedrooms</span>
+      </div>
+      <div className="amenity-item">
+        <img src={bathIcon} alt="Baths" className="amenity-icon" />
+        <h3>{animatedValues.baths || 0}</h3>
+        <span>Baths</span>
+      </div>
+      <div className="amenity-item">
+        <img src={areaIcon} alt="Lot" className="amenity-icon" />
+        <h3>{animatedValues.lot || 0}</h3>
+        <span>Lot</span>
+      </div>
+      <div className="amenity-item">
+        <img src={squareFeetIcon} alt="Area" className="amenity-icon" />
+        <h3>{animatedValues.squareFeet || 0}</h3>
+        <span>Area sqft</span>
       </div>
     </div>
+
+    {/* Center Column (Gallery) */}
+    <div className="gallery">
+      <div className="gallery-title">
+        <h1>{title}</h1>
+        <h3>{address}</h3>
+      </div>
+      <div className="gallery-main-image">
+        <img src={section2Image} alt={title} />
+      </div>
+      <div className="gallery-description">
+        <p>{description}</p>
+      </div>
+    </div>
+
+    {/* Right Column */}
+    <div className="amenities-column">
+      <div className="amenity-item">
+        <img src={waterFrontIcon} alt="Waterfront" className="amenity-icon" />
+        <h3>{details.waterFront || "No"}</h3>
+        <span>Waterfront</span>
+      </div>
+      <div className="amenity-item">
+        <img src={garageIcon} alt="Pool Area" className="amenity-icon" />
+        <h3>{details.poolArea || "No"}</h3>
+        <span>Garage</span>
+      </div>
+      <div className="amenity-item">
+        <img src={communityIcon} alt="Granite Countertops" className="amenity-icon" />
+        <h3>{details.graniteCounterTops || "No"}</h3>
+        <span>Lake Community</span>
+      </div>
+      <div className="amenity-item">
+        <img src={brickIcon} alt="Stainless" className="amenity-icon" />
+        <h3>{details.stainless || "No"}</h3>
+        <span>Year Built</span>
+      </div>
+    </div>
+  </div>
+</div>
   );
 };
 

@@ -59,13 +59,13 @@ const Header = () => {
               {openDropdown === "buying" && (
                 <ul className="dropdown-menu">
                   <li>
-                    <a href="/buying/currentlistings">Current Listings</a>
+                    <a href="https://candlewoodrealtor.com/buying/currentlistings">Our Listings</a>
                   </li>
                   <li>
-                    <a href="/buying/homesearch">Home Search</a>
+                    <a href="https://candlewoodrealtor.com/buying/homesearch">Home Search</a>
                   </li>
                   <li>
-                    <a href="/buying/lakeinfoguides">Lake Info Guide</a>
+                    <a href="https://candlewoodrealtor.com/buying/lakeinfoguides">Lake Info Guide</a>
                   </li>
                 </ul>
               )}
@@ -79,43 +79,38 @@ const Header = () => {
               {openDropdown === "selling" && (
                 <ul className="dropdown-menu">
                   <li>
-                    <a href="/selling/recentlysold">Recently Sold</a>
+                    <a href="https://candlewoodrealtor.com/selling/recentlysold">Recently Sold</a>
                   </li>
                   <li>
-                    <a href="/selling/ourmarketingplan">Our Marketing Plan</a>
+                    <a href="https://candlewoodrealtor.com/selling/ourmarketingplan">Our Marketing Plan</a>
                   </li>
                   <li>
-                    <a href="/selling/preparingyourhomeforsale">Preparing Your Home</a>
+                    <a href="https://candlewoodrealtor.com/selling/preparingyourhomeforsale">Preparing Your Home</a>
                   </li>
                   <li>
-                    <a href="/selling/homevaluation">Home Valuation</a>
+                    <a href="https://candlewoodrealtor.com/selling/homevaluation">Home Valuation</a>
                   </li>
                 </ul>
               )}
             </li>
 
             <li>
-              <a href="/ourlistings" className="nav-link">
-                Our Listings
-              </a>
-            </li>
-            <li>
-              <a href="/waterfronthomes" className="nav-link">
+              <a href="https://candlewoodrealtor.com/waterfronthomes" className="nav-link">
                 Waterfront Homes
               </a>
             </li>
             <li>
-              <a href="/resourceguide" className="nav-link">
+              <a href="https://candlewoodrealtor.com/resourceguide" className="nav-link">
                 Resource Guide
               </a>
             </li>
             <li>
-              <a href="/agents" className="nav-link">
+              <a href="https://candlewoodrealtor.com/agents" className="nav-link">
                 Agents
               </a>
             </li>
             <li>
-              <a href="/contactus" className="nav-link">
+              <a href="https://candlewoodrealtor.com/contactus" className="nav-link">
                 Contact Us
               </a>
             </li>
